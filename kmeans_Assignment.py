@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 
+
 # load data set
 iris = load_iris()
 
@@ -28,6 +29,7 @@ iris_df.columns = colnames
 
 models = {}
 
+# using this range will give me 10 clusters
 for i in range(1, 11):
     kmeans = KMeans(n_clusters=i, max_iter=5000).fit(iris_df)
     models[i] = kmeans.inertia_
