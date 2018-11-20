@@ -4,6 +4,7 @@ from sklearn import model_selection
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
 
 #load data set
 boston = load_boston()
@@ -39,14 +40,23 @@ fit = reg.fit(X_train, Y_train)
 #predict
 pred = reg.predict(X_test)
 
-#plot results
+#print prediction results as a string
+tostr = pred.tostring()
+string = np.fromstring(tostr)
+print(string)
+
+#plot results (not asked for in this assignment)
 plt.scatter(Y_test, pred)
 plt.xlabel("Actual Prices (in thousands)")
 plt.ylabel("Predicted prices (in thousands)")
 plt.title("Linear Regression: Actual vs. Predicted Prices")
 plt.show()
 
-
+# Data Sources and Citations
+# Classification methodology framework was developed
+# with help from a tutorial at https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
+# which is a classification tutorial on flowers. Principles from that tutorial were applied to my data set
+# and were expanded upon as part of this analysis.
 
 
 
